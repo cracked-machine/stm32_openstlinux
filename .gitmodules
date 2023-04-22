@@ -16,3 +16,6 @@
 [submodule "layers/meta-qt5"]
 	path = layers/meta-qt5
 	url = https://github.com/meta-qt5/meta-qt5.git
+[submodule "layers/openembedded-core"]
+	path = layers/openembedded-core
+	url = https://github.com/cracked-machine/openembedded-core.git
