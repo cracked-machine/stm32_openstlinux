@@ -1,0 +1,11 @@
+{
+    "image": "ghcr.io/cracked-machine/openstlinux_docker:ubuntu2204",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "eugenwiens.bitbake"
+            ]
+        }
+    }
+    
+}
