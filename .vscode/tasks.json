@@ -8,40 +8,9 @@
             "type": "shell",
             "command": [
                 "source layers/meta-st/meta-st-scripts/envsetup.sh",
-                "&& bitbake ${input:image}"
+                "&& bitbake st-image-weston"
             ],
             "problemMatcher": []
-        },
-        {
-            "label": "custom bitbake command",
-            "type": "shell",
-            "command": [
-                "rm -r /workspaces/stm32_poky/workdir &&",
-                "cd layers/poky",
-                "&& TEMPLATECONF=/workspaces/stm32_poky/layers/meta-test/conf/templates/stm32mp157f_dk2",
-                "source oe-init-build-env ../../workdir",
-                "&& ${input:bitbake_cmd}"
-            ],
-            "options": {
-                "env": {
-                    "TEMPLATECONF": "/workspaces/stm32_poky/layers/meta-test/conf/templates/stm32mp157f_dk2"
-                }
-            },
-            "problemMatcher": []
-        }
-    ],
-    "inputs": [
-        {
-            "id": "bitbake_cmd",
-            "type": "promptString",
-            "default": "bitbake -e",
-            "description": "Enter command"
-        },
-        {
-            "id": "image",
-            "type":"promptString",
-            "default": "st-image-core",
-            "description": "Type either 'st-image-weston' or 'st-image-core'"
         }
     ]
 }

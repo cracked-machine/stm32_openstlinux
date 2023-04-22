@@ -16,11 +16,10 @@ If you don't have access to the container you can build it by first cloning the 
 
 ### Build
 
-Use the task.json or run the following command line
+Use the task.json or run the following command line to configure the build:
 
 ```
-cd layers/poky && \
-TEMPLATECONF=/workspaces/stm32_poky/layers/meta-test/conf/templates/stm32mp157f_dk2 source oe-init-build-env ../../workdir
+source layers/meta-st/meta-st-scripts/envsetup.sh
 ```
 
 Depending on the selection made during the previous step, select either:
@@ -34,6 +33,14 @@ or
 ```
 bitbake st-image-weston
 ```
+
+You may get a warning about connectivity to `www.example.com`. If so add the line
+
+```
+CONNECTIVITY_CHECK_URIS=""
+```
+
+to [local.conf](build-openstlinuxweston-stm32mp13-disco/conf/local.conf) (this file is added during the build configuration)
 
 
 ### Create raw file for SD Card 
